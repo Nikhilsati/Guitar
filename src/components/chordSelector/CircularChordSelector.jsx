@@ -193,7 +193,7 @@ const KeySelector = ({
   useEffect(() => {
     if (
       initialKey &&
-      (initialKey.note != selected.note || initialKey.type != selected.type)
+      (initialKey.note !== selected.note || initialKey.type !== selected.type)
     )
       setSelected(initialKey);
   }, [initialKey]);

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
-import KeySelector from './KeySelector';
 import CircularChordSelector from './CircularChordSelector';
 
 const ChordSelector = () => {

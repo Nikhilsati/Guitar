@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
-import HorizontalFretboard from "../../components/fretboard/HorizontalFretboard";
-import KeySelector from "../../components/chordSelector/KeySelector";
-import { majorScale, minorScale, scale } from "../../utils/constants";
-import Switch from "../../components/switch/Switch";
+import React, { useState } from 'react';
+import HorizontalFretboard from '../../components/fretboard/HorizontalFretboard';
+import KeySelector from '../../components/chordSelector/KeySelector';
+import { majorScale, minorScale, scale } from '../../utils/constants';
+import Switch from '../../components/switch/Switch';
 
 const getScale = (key) => {
   const baseIndex = scale.findIndex((note) => note === key.note);
-  if (key.type === "Maj")
+  if (key.type === 'Maj')
     return majorScale.map((step, index) => scale[(baseIndex + step) % 12]);
 
-  if (key.type === "Min")
+  if (key.type === 'Min')
     return minorScale.map((step, index) => scale[(baseIndex + step) % 12]);
 };
 const Tabs = () => {
   const [selectedKey, setSelectedKey] = useState({
-    note: "C",
-    type: "Maj",
+    note: 'C',
+    type: 'Maj',
   });
 
   const [extraNotes, setExtraNotes] = useState(false);
@@ -33,9 +33,9 @@ const Tabs = () => {
       />
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
         }}
       >
         <KeySelector
@@ -43,17 +43,17 @@ const Tabs = () => {
           initialKey={selectedKey}
         />
         <div>
-          <h4 style={{ color: "#fff" }}>Hide extra notes</h4>
+          <h4 style={{ color: '#fff' }}>Hide extra notes</h4>
           <Switch
-            id="extra-notes"
+            id='extra-notes'
             isOn={!extraNotes}
             handleToggle={handleExtraNotes}
           />
         </div>
         <div>
-          <h4 style={{ color: "#fff" }}>Show No's</h4>
+          <h4 style={{ color: '#fff' }}>Show No's</h4>
           <Switch
-            id="numbers"
+            id='numbers'
             isOn={showNumbers}
             handleToggle={handleShowNumbers}
           />

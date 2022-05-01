@@ -85,7 +85,7 @@ const KeySelector = ({
 }) => {
   const classes = useStyles();
   const major = 'Maj';
-  const minor = 'Min';
+  // const minor = 'Min';
   const [selected, setSelected] = useState(
     initialKey || {
       note: '-',
@@ -96,7 +96,7 @@ const KeySelector = ({
   useEffect(() => {
     if (
       initialKey &&
-      (initialKey.note != selected.note || initialKey.type != selected.type)
+      (initialKey.note !== selected.note || initialKey.type !== selected.type)
     )
       setSelected(initialKey);
   }, [initialKey]);
